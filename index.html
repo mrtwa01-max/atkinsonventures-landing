@@ -1,22 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atkinson Ventures</title>
-    <style>
-        body { font-family: system-ui, sans-serif; max-width: 600px; margin: 80px auto; padding: 0 20px; line-height: 1.6; color: #333; }
-        h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-        p { color: #555; }
-        footer { margin-top: 40px; font-size: 0.9rem; color: #888; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atkinson Ventures</title>
+  <!-- Google Fonts for modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Reset & CSS Variables */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      --card-bg: rgba(255, 255, 255, 0.04);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-color: #38bdf8;
+      --accent-hover: #0284c7;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 1.5rem;
+    }
+
+    /* Layout Wrapper */
+    .container {
+      max-width: 900px;
+      width: 100%;
+      margin: auto;
+      text-align: center;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 3rem 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 2.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.description {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+    }
+
+    /* Services Grid */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+      text-align: left;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 1.25rem;
+      border-radius: 10px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    .service-card h3 {
+      font-size: 1rem;
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    /* Call to Action Button */
+    .btn-contact {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: #0f172a;
+      font-weight: 600;
+      padding: 0.875rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+    }
+
+    .btn-contact:hover {
+      background-color: var(--accent-hover);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    /* Footer */
+    footer {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: underline;
+      transition: color 0.2s ease;
+    }
+
+    footer a:hover {
+      color: var(--text-main);
+    }
+  </style>
 </head>
 <body>
-    <h1>Atkinson Ventures</h1>
-    <p>Welcome to Atkinson Ventures. We specialize in digital product strategy, software and mobile app development, and venture management.</p>
-    <p>Contact us at <a href="mailto:contact@atkinsonventures.page">contact@atkinsonventures.page</a>.</p>
-   <footer>
-    &copy; 2026 Atkinson Ventures, LLC. All rights reserved. | <a href="/privacy.html">Privacy Policy</a>
-</footer>
+
+  <div class="container">
+    <main class="hero">
+      <h1>Atkinson Ventures</h1>
+      <p class="description">
+        We specialize in digital product strategy, software and mobile app development, and venture management.
+      </p>
+
+      <!-- Visual breakdown of offerings -->
+      <div class="services">
+        <div class="service-card">
+          <h3>Product Strategy</h3>
+          <p style="font-size: 0.875rem; color: #94a3b8;">Transforming ambitious ideas into actionable product roadmaps.</p>
+        </div>
+        <div class="service-card">
+          <h3>App Development</h3>
+          <p style="font-size: 0.875rem; color: #94a3b8;">Crafting robust Web and Mobile software applications.</p>
+        </div>
+        <div class="service-card">
+          <h3>Venture Management</h3>
+          <p style="font-size: 0.875rem; color: #94a3b8;">Scaling digital ventures with hands-on operational leadership.</p>
+        </div>
+      </div>
+
+      <a href="mailto:contact@atkinsonventures.page" class="btn-contact">Contact Us</a>
+    </main>
+
+    <footer>
+      © 2026 Atkinson Ventures, LLC. All rights reserved. | <a href="#">Privacy Policy</a>
+    </footer>
+  </div>
+
 </body>
 </html>
